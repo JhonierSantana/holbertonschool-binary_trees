@@ -11,9 +11,9 @@ int aux_binary_tree_height(const binary_tree_t *tree)
 
 	if (!tree)
 		return (0);
-	if (tree->left)
+	if (tree->left || tree)
 		left_height = 1 + aux_binary_tree_height(tree->left);
-	if (tree->right)
+	if (tree->right || tree)
 		right_height = 1 + aux_binary_tree_height(tree->right);
 	return (right_height > left_height ? right_height : left_height);
 }
